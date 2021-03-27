@@ -9,16 +9,68 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        //to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          //Inside Scaffold we have different properties
+          appBar: AppBar(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            title: Text("Darshan Here"),
+            centerTitle: true,
+            backgroundColor: Colors.cyan[600],
+          ),
+          body:
+              // Container(
+              //   decoration: BoxDecoration(
+              //       image: DecorationImage(
+              //     image: NetworkImage(
+              //         'https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_1280.jpg'),
+              //     fit: BoxFit.cover,
+              //   )),
+              Center(
+                  //child: Image.asset('assets/Kobe.jpg')
+                  child: Image.network(
+                      'https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_1280.jpg')
+                  // image: NetworkImage(
+                  //     'https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_1280.jpg'),
+
+                  // image: AssetImage('assets/Kobe.jpg'),
+
+                  // Text(
+                  //   "Hello Darshan",
+                  //   style: TextStyle(
+                  //       fontSize: 20.0,
+                  //       fontWeight: FontWeight.bold,
+                  //       fontFamily: "PressStart2P",
+
+                  //       //shadows: Shadow.convertRadiusToSigma(radius),
+                  //       letterSpacing: 1.2,
+                  //       color: Colors.blue[400],
+                  //       shadows: [
+                  //         Shadow(
+                  //           color: Colors.blue.shade900.withOpacity(0.5),
+                  //           offset: Offset(-2, 30.0),
+                  //           blurRadius: 10.0,
+                  //         ),
+                  //       ]),
+                  // ),
+
+                  ),
+          bottomNavigationBar: BottomAppBar(
+              child: Row(
+            children: [
+              IconButton(icon: Icon(Icons.menu_open), onPressed: () {}),
+              Spacer(),
+              IconButton(icon: Icon(Icons.search), onPressed: () {}),
+              IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+            ],
+          )),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {},
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+        ));
   }
 }
